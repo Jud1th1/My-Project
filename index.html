@@ -3,81 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Testing Selections and Booleans</title>
+    <title>Javascript Practice</title>
 </head>
 <body>
-    <h1>Testing Selections!</h1>
+    <h1>Loops in JS!</h1>
 
     <script>
-        var red = true;
-        var blue = false;
-        var green = null;
-        var myNum = 5;
-        var otherNum = 6;
-        var notNum = "5";
-        var myValue = notNum - myNum;
-        
-        //Booleans (true or false) practice
-        //we know undefined, false, null, 0, NAN (not a number) are all false. Numbers like 1, 100, -100 come up true
-        /* if(myNum === notNum){
-            console.log("the statement is true");
+       
+       /* Loops practice
+       //sidenote: a shortcut for i = i+1 is i++
+       for(var i = 0; i <= 10; i++){
+            console.log(i);
+       } */
+
+
+       // Arrays 
+       /* var colors = ['red', 'blue', 'yellow', 'green', 'orange', 'purple'];
+
+       for(var i = 0; i < colors.length; i++){
+            console.log(colors[i]);
+       } */
+
+
+       // For .. Of Loop (used for arrays)
+       /* var food = ["grapes", "cheese", "bread", "olives"];
+
+       for(var eachFoodItem of food){
+            console.log(eachFoodItem);
+       } */
+
+
+       //strings
+       /* 
+       var statement = "A string can be treated like an array";
+
+       for(var i=0; i < statement.length; i++){
+            console.log(statement[i]); 
+       }
+
+       for(var eachLetter of statement){ //we can also write it as a for..of loop
+        console.log(eachLetter); 
+       } */
+
+
+       // While Loop
+        var incrementor = 0;
+        var text = "";
+
+        while(incrementor < 10){
+            text += "The incrementor has gone up to " + incrementor + "\n";  // sidenote \n is new line
+            incrementor++;
         }
-        else {
-            console.log("the statement is false");
-        } */
 
-        var colors = ['red','green','blue','yellow'];
-        var selectedColor = colors[3];
-
-        //Else if practice
-        /*if(selectedColor == 'red'){
-            console.log("the color is red");
+        // Template Literals: Using backticks in JS along with ${} for variables around your expressions allows you to embed them in your strings:
+        while(incrementor < 10){
+            text += `The incrementor has gone up to ${incrementor}  \n`;  
+            incrementor++;
         }
-        else if (selectedColor == 'green'){
-            console.log("the color is green");
+
+        //Another example where the expressoon in the second template literal is evaluated on the fly, each time through the loop.
+       var i = 1;
+       
+        while(i < 11){
+            text += `The incrementor is ${i}, the incrementor squared is ${i*i}  \n`;  
+            i++;
         }
-        else if (selectedColor == 'blue'){
-            console.log("the color is blue");
-        } 
-        else {
-            console.log("the color is yellow");
-        }  */
 
+        console.log(text);
 
-        //Switch statements practice
-       /*  switch(selectedColor){
-            case "red": console.log("the color is red"); break;
-            case "green": console.log("the color is green"); break;
-            case "blue": console.log("the color is blue"); break;
-            case "yellow": console.log("the color is yellow"); break;
-            default: console.log("There was an error!");
-        } */
-
-
-        /* // Logical operators- && practice 
-        var goodMood = true;
-        var gotSleep = true;
-
-        if (goodMood && gotSleep){
-            console.log("Today is a good day!");
-        }
-        else {
-            console.log("I am grumpy!")
-        }  */
-
-
-        // Logical operators- || practice 
-
-        var gotBreakfast = true;
-        var gotLunch = false;
-        var gotDinner = false;
-
-        if(gotBreakfast||gotLunch||gotDinner){
-            console.log("things are okay");
-        }
-        else{
-            console.log("I am STARVING");
-        }
 
 
     </script>
