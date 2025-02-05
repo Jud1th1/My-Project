@@ -6,72 +6,81 @@
     <title>Javascript Practice</title>
 </head>
 <body>
-    <h1>Loops in JS!</h1>
+    <h1>Structured Programming</h1>
+
+    <h2>Basic Logic Code:</h2>
+    <p><b>Sequence</b>- First you do this, then you do that, and then finally you do this over here.</p>
+    <p><b>Selection</b> - If some condition is met, do this, otherwise do that.</p>
+    <p><b>Loop</b> - While this condition is true, do this.</p>
+
+
 
     <script>
+       var myString = "I am really hungry for some";
+
+       console.log(myString);
+
+        //Challenge: Create a variable called myUpperString and have it capitalize your prev. string output.
+       var myUpperString = myString.toUpperCase(); //Use method .toUpperCase to capitalize letters
+
+       console.log(myUpperString);
+
+       //Challenge 2: Pull the word "really" from the first string, and put it in its own variable, then convert it to upper case. 
+       //Then make a new string and replace the lowercase "really" with the uppercase one and print it out in the console.
+
+       var reallyLocation = myString.search('really');
+       console.log(reallyLocation);  //It counted 5(which is the letter e so now we use the substr to get all 6 characters)
+
+       var specialWord = myString.substr(reallyLocation, 6);
+       console.log(specialWord);
+
+       specialWord = specialWord.toUpperCase();
+       var newString = myString.replace('really', specialWord);
+
+       console.log(newString); //Congrats this a sequence :) 
+
+        //Challenge 3: Make an array called foods and put four foods in the array.
+        //Then use the string literal syntax to print out a sentence that prints to the console the variable myString, 
+        // which was declared previously, followed by a space and then the first element of the foods array.
+
+        var foods = ["pizza", "wings", "chocolate", "popcorn"];
+
+        console.log(`${myString} ${foods[0]}`); //YAY! CORRECT!
+        //Now see if you can loop to print out in the console one line for each statement that inclusdes the text in myString & each value in the foods array
+        for(var i = 0; i < foods.length; i++){
+            console.log(`${myString} ${foods[i]}`); //first through the loop i=0 will print out i am really hungry for some ___ eachitem until the length of our array (aka goig through the entire loop)
+        }
+
+        //or
+
+        for(var eachFood of foods){
+            console.log(`${myString} ${eachFood}`);//for..loop example
+        }
+
+        //Challenge 4: Modify the script so that this time if the index of food is an even number, convert it to uppercase, otherwise don't convert it. 
+        /* for(var i = 0; i < foods.length; i++){
+
+            var remainder = i % 2;
+
+            if(remainder === 0){
+                var foodUpper = foods[i].toUpperCase();
+                console.log(`${myString} ${foodUpper}`); 
+            }
+            else {
+                console.log(`${myString} ${foods[i]}`);
+            }
+   
+        } */
        
-       /* Loops practice
-       //sidenote: a shortcut for i = i+1 is i++
-       for(var i = 0; i <= 10; i++){
-            console.log(i);
-       } */
-
-
-       // Arrays 
-       /* var colors = ['red', 'blue', 'yellow', 'green', 'orange', 'purple'];
-
-       for(var i = 0; i < colors.length; i++){
-            console.log(colors[i]);
-       } */
-
-
-       // For .. Of Loop (used for arrays)
-       /* var food = ["grapes", "cheese", "bread", "olives"];
-
-       for(var eachFoodItem of food){
-            console.log(eachFoodItem);
-       } */
-
-
-       //strings
-       /* 
-       var statement = "A string can be treated like an array";
-
-       for(var i=0; i < statement.length; i++){
-            console.log(statement[i]); 
-       }
-
-       for(var eachLetter of statement){ //we can also write it as a for..of loop
-        console.log(eachLetter); 
-       } */
-
-
-       // While Loop
-        var incrementor = 0;
-        var text = "";
-
-        while(incrementor < 10){
-            text += "The incrementor has gone up to " + incrementor + "\n";  // sidenote \n is new line
-            incrementor++;
-        }
-
-        // Template Literals: Using backticks in JS along with ${} for variables around your expressions allows you to embed them in your strings:
-        while(incrementor < 10){
-            text += `The incrementor has gone up to ${incrementor}  \n`;  
-            incrementor++;
-        }
-
-        //Another example where the expressoon in the second template literal is evaluated on the fly, each time through the loop.
-       var i = 1;
-       
-        while(i < 11){
-            text += `The incrementor is ${i}, the incrementor squared is ${i*i}  \n`;  
-            i++;
-        }
-
-        console.log(text);
-
-
+        //Refactoring Code  -the process of making your code simpler. (From the Solution Above)
+        for(var i = 0; i < foods.length; i++){
+                if(i % 2 === 0){   //check if the incrementor is even 
+                    console.log(`${myString} ${foods[i].toUpperCase()}`); //if even = UPPERCASE
+                }
+                else {
+                    console.log(`${myString} ${foods[i]}`);//otherwise it is odd/lowercased
+                }
+            }
 
     </script>
 </body>
