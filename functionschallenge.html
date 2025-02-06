@@ -12,40 +12,128 @@
     <script>
 
     //Challenge 10 - Write a function called hello() that outputs a greeting in the console when the function runs
-    /*  function hello (){
-        console.log("Hello, and welcome!");    
+    /* function hello(){
+        console.log("Hello, and welcome");
+    }
+
+    hello();
+    */
+
+
+    //____________________________________________________________________________________________________________
+    //Challenge 11 - Change hello() so that it takes a parameter, and when you run the function, you pass in the 
+    //name of a person and the function outputs the greeting to the console.
+    /* function hello(name){
+        console.log(`Hello ${name} and welcome`);
+    }
+
+    hello("Judith");  */
+
+
+    //____________________________________________________________________________________________________________
+    //Challenge 12 - Add a prompt requesting the user for their name, and assign th result to a variable.
+    //Then pass that variable into the hello() function so that the console greets the person by name.
+    /* var name = prompt("Please enter your name");
+    
+    function hello(){
+        console.log(`Hello ${name} and welcome`);
     }
 
     hello(); */
 
 
     //____________________________________________________________________________________________________________
-    //Challenge 11- Change hello() so that it takes a parameter and when you run the function, you pass in the
-    //name of a person and the function outputs the greeting to the console
-    /* function hello(name){
-        console.log(`Hello ${name}, and welcome!`);
+    //Challenge 13 - Handle the situation that happens if the user clicks cancel on the prompt, or does not enter 
+    // text in the prompt. If the user does on of those two acitons, have the hello() fucntion log to console
+    //"You didn't give me your name". Otherwise, have the console log the greeting 
+    /* var userName= prompt("Please enter your name");
+
+    function hello(name){
+        if(name == null || name == ""){
+            console.log("You didn't give me your name");
+        }else{
+            console.log(`Hello ${name} and welcome`);
+        }
     }
 
-    hello("Judith"); */
+    hello(userName); */
 
 
     //____________________________________________________________________________________________________________
-    //Challenge 12- This time add a prompt requesting the user for their name and assign the result to a variable.
-    //Then pass that variable into the hello() function so that the console greets the person by name.
-    
-    /*var userName = prompt("What is your name?");
+    //Challenge 14 - Update the hello() function so that it returns a value rather than outputs directly to the console.
+    //Then outside the function write a call to the console that logs the greeting returned by the function.
+    /* var userName= prompt("Please enter your name");
 
-    function hello(){
-        console.log(`Hello ${userName}, and welcome!`)
+    function hello(name){
+        if(name == null || name == ""){
+            return "You didn't give me your name";
+        }else{
+            return `Hello ${name} and welcome`;
+        }
     }
+    var greeting = hello(userName);
 
-    hello(userName);*/
+    console.log(greeting); */
+
+    //or
+
+    /* var userName= prompt("Please enter your name");
+
+    function hello(name){
+        var greeting;
+
+        if(name == null || name == ""){
+            greeting = "You didn't give me your name";
+        }else{
+            greeting = `Hello ${name} and welcome`;
+        }
+        return greeting;
+    }   
+
+    console.log(hello(userName)); */
     
-    
+   
     //____________________________________________________________________________________________________________
-    //Challenge 13- Handle the situation that happens if the user clicks cancel on the prompt, 
-    // or does not enter text in the prompt. If the user does one of those two actions, have the hello() function 
-    // log to the console "You didn't give me your name." Otherwise have the console log the greeting 
+    //Challenge 15 - Add an array of foods and put 3-5 elements in the array. Then make a new function called hospitality();
+    //after the hello(); function. The new function will take two parameters, a name and a gift, which will be an array.
+    //Have this function run the hello() function and output the result to the console. Then have it loop through 
+    //the gift array and offer a gift to the visitor by name and output that to the console. 
+    /* var userName= prompt("Please enter your name");
+    var foods = ["chocolate chip cookies","cheesecake","ice cream","oreos"];
+
+    function hello(name){
+        var greeting;
+
+        if(name == null || name == ""){
+            greeting = "You didn't give me your name";
+        }else{
+            greeting = `Hello ${name} and welcome`;
+        }
+        return greeting;
+    }   
+
+    function hospitality(name, gift){
+
+        console.log(hello(userName));
+        for(var i = 0; i <gift.length; i++){
+            console.log(`${name}, would you like some ${gift[i]}?`);
+        }
+    }    
+
+    hospitality(userName, foods);
+    */
+
+
+    //____________________________________________________________________________________________________________
+    //Challenge 16 - Add the function that gets random integers from the functions lecture. Update the hospitality()
+    //function so that, instead of looping through the whole array, randomly picks one element from the array
+    //and offers that to the user.
+    
+
+
+   
+    
+
 
 
     </script>

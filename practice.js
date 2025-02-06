@@ -1,15 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Javascript Basic Challenges: Challenge 1</title>
-</head>
-<body>
-    
-    <h1>Javascript Basic Challenges: Challenge 1</h1>
-
-    <script>
         //Challenge 1: 
        /*  var firstName = "Judith";
         var lastName = "Jean-Francois";
@@ -117,8 +105,3 @@
         if(primaryColor.includes(userColor) || secondaryColor.includes(userColor)){
             console.log("It's a primary or secondary color.");
         }
-    </script>
-
-
-</body>
-</html>red
