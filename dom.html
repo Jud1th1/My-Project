@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Examples</title>
+    <link rel="stylesheet" href="mystyle.css">
+    <!-- <style>
+        .blue {color:blue;}
+    </style> -->
+</head>
+<body>
+
+    <h1>DOM Examples</h1>
+    <h2>JS practice console logged today:</h2>
+        <ul class="index">
+            <li>getElementById Example</li>
+            <li>getElementByTagName Example</li>
+            <li>querySelector & querySelectorAll Example</li>
+            <li>Properties examples:</li>
+                <ul>.style.property</ul>
+                <ul>.innerHTML</ul>
+                <ul>.className</ul>
+            <li>Method Examples:</li>
+                <ul>.setAttribute</ul>
+                <ul>.removeChild();</ul>
+            <li>Creating Elements & Text Nodes</li>
+        </ul>
+
+
+    <div id="special">
+        <p class="someclass">Here is a paragraph</p>
+        <p>Here is another paragraph</p>
+        <p>Here is one more paragraph</p> 
+        <p>REMOVE THIS PARAGRAPH</p> 
+
+        <form>
+            <label><input type="checkbox"> YES! </label>
+        </form>
+    </div>
+
+    <!-----------------------------My Notes Below:--------------------------------->
+    <section class="mynotes">
+        <h2>My Class Notes:</h2>
+        
+        <div class="indentnotes">
+            <h3>getElementById();</h3>
+            <p>The document method <b>getElementById()</b> will go into your document and look for that specific element</p>
+
+            <h3>getElementByTagName();</h3>
+            <p>The document method <b>getElementByTagName()</b> will give you all the elements with a particular tag name in a collection.</p>
+
+            <h3>querySelector();</h3>
+            <p>The document method <b>querySelector();</b> will return the first match of a query</p>
+            <p>The document method <b>querySelectorAll();</b> will get all the elements that match a certain selector. It returns a nodeList of elements that you have to loop through.</p>
+        </div>
+
+        <h2>Working with Properties</h2>
+        <p><b>.style.property = "value";</b> can be used to change the color of an element.</p>
+        <p><b>.innerHTML = "value"; </b> can be used to change the html inside any element on a web page.</p>
+        <p><b>.className = "value"; </b> allows you to set the class or classes for an element.</p>
+
+        <h2>Working with Element Methods</h2>
+        <p><b>setAttribute();</b> let's you set any type of attribute on an element</p>     
+    </section>
+
+
+    <script>
+        //getElementById
+        /* document.getElementById("one").style.color = "red"; */
+
+
+        //getElementByTagName - let's get a collection of paragraphs:
+        /* var myParagraphs = document.getElementsByTagName("p");
+        console.log(myParagraphs); */
+
+
+        //Loop the paragraphs and change color
+        /* var ps = document.getElementsByTagName("p");
+
+        for(var i=0; i < ps.length; i++){
+            ps[i].style.color= "blue"; //now all p elements should be blue
+            alert(`showing paragraph ${i}`); //You want to slowly see the change
+        } */
+
+        /* var myClass= document.getElementsByClassName("special");
+        for(var i=0; i < myClass.length; i++){
+            myClass[i].style.color = "red";
+        }// if it was only the one class element we can shorten our code to be 
+
+        var myClass= document.getElementsByClassName("special");
+            myClass[0].style.color = "red"; */
+        
+
+        //querySelector Example
+        /* var myText = document.querySelector('#special .someclass'); //remember with querySel you have to pass in the css name
+        myText.style.color= "green"; */
+
+        //querySelectorAll 
+        /* var myText = document.querySelectorAll('#special p');
+        for(var i=0; i<myText.length; i++){
+            myText[i].style.color = "purple";
+        } */
+
+
+        //innerHTML
+        /* var myDiv = document.getElementById('special');
+        myDiv.innerHTML = "<p>Here is my new paragraph</p>";
+        //a cleaner way to write this code:
+        document.getElementById('special').innerHTML = "<p>Here is my new paragraph</p>"; */
+
+        //className
+        /* var firstPara = document.querySelector('p');
+        firstPara.className = "blue";
+        */
+
+
+        //setAttribute Method
+        /* var myCheckbox = document.querySelector('input');
+        myCheckbox.setAttribute('checked','checked'); //it'll set a checked attribute and set it to checked, which will make the check box checked by default
+        */
+
+
+        //Creating elements & Text Nodes
+        /* var myTag = document.createElement('p'); //so we are creating a paragraph
+        var myText = document.createTextNode("Here is a new paragraph"); //we are adding text to the paragraph
+        myTag.appendChild(myText);//now let's put this on the page
+
+        var myDiv = document.querySelector('div'); //we get our div and append it/added inside the div
+        myDiv.appendChild(myTag); */
+
+
+        //Removing Elements 
+        var myDiv= document.querySelector('div');
+        myDiv.removeChild(myDiv.children[3]);
+
+
+
+    </script>
+    
+</body>
+</html>
