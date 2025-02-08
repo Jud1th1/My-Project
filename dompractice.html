@@ -49,6 +49,14 @@
             overflow-clip-margin: content-box;
             overflow: clip;
         }
+
+        .red{
+            color: red;
+        }
+
+        .blue{
+            color: blue;
+        }
     </style>
 </head>
 <body>
@@ -89,25 +97,65 @@
 		</footer>
 	</main>
 
-    <div id="crx-root-main"></div>
-    <div id="teal-job-tracker-root-stable" style="z-index: 2147483647;"><iframe id="teal-job-tracker-iframe-stable" srcdoc="<!DOCTYPE html><html><head></head><body><div class=&quot;frame-root&quot;></div></body></html>" style="background: rgb(255, 255, 255) !important; width: 380px !important; height: 100vh !important; position: fixed !important; inset: 0px -380px auto auto !important; z-index: 2147483647 !important; border: 0px !important; box-shadow: rgba(0, 0, 0, 0.25) 0px 0px 16px -3px !important; transition: right 0.25s ease-in-out !important; transform: none !important;"></iframe></div>
-    <div id="teal-job-tracker-companion-root-stable" style="display: block; z-index: 2147483646; bottom: 58px; right: 0px; position: fixed; height: 60px; width: auto;"></div>
-
     <!-----------------------------------------  JAVASCRIPT  -------------------------------------------->
     <script>
-    //For this challenge, write a script that gets the text inside the paragraph with the id set to
+    //Challenge 17 For this challenge, write a script that gets the text inside the paragraph with the id set to
     //"copyright" and use the color property to change the color of the text to green.
      
+    /* document.getElementById("copyright").style.color = "green"; */
+
+    //_____________________________________________________________________________________
+    //Challenge 18 For this challenge, get all the paragraphs on the page, assign them to a variable, 
+    // then use that variable in a loop to set the style.color property to green.
+
+    /* var myParagraphs = document.getElementsByTagName('p');
+    for(var i=0; i<myParagraphs.length; i++){
+        myParagraphs[i].style.color= "green";
+    } */
+
+    //_____________________________________________________________________________________
+    //Challenge 19 For this challenge, assign the class of .red (which is already defined inside the 
+    //style tags at the top of the page) to the <h1> in the header and to the date in the second article.
     
+   /*  var headingRed = document.querySelector('h1');
+        headingRed.className = "red";
 
+    var dateRed = document.getElementsByClassName('date');
+        dateRed[0].className = "red"; */
 
+    //_____________________________________________________________________________________
+    //Challenge 20 For this challenge, change the src attribute for the first picture in the 
+    // first article to:"http://meadpoint.net/images/xmasajax.jpg" Also add the class "blue" 
+    // to all the paragraphs in the second article. 
+    /* var cutePet = document.querySelector('#one img');
+        cutePet.setAttribute('src', 'http://meadpoint.net/images/xmasajax.jpg');
 
+    var secondArticlePs = document.querySelectorAll('#two p');
+    
+    for (var i=0; i<secondArticlePs.length; i++){
+        secondArticlePs[i].className = "blue";
+    }
+    */
 
+    //_____________________________________________________________________________________
+    //Challenge 21 For this challenge, get all the links, then check to see if one of them is set 
+    //to go to the wikipedia page on llamas, if it is, set the text of that link to "Llamas are cool!"
+    //HINTS:
+    //Use these document methods and properties:
+        //.getElementsByTagName();
+        //.getAttribute();
+        //.innerHTML = "";
+        //You will have multiple anchor tags to check and you're looking to see if one of them 
+        // matches, so that should tell you what logical flow control structures you need.
+   /*  var anchors = document.getElementsByTagName('a');
 
+    for(var i=0; i<anchors.lenth; i++){
+        var link = anchors[i].getAttribute('href');
 
-
-
-
+        if(link === "https://en.wikipedia.org/wiki/Llama"){
+            anchors[i].innerHTML = "Llamas are cool!";
+        }
+    } */
 
 
 
