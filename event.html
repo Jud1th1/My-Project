@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+    <style>
+        div{
+            width: 50px;
+            height: 5000px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Capturing Scroll Events</h1>
+    <div></div>
+
+     <!--  <button>Don't Press Me!</button>
+       
+     <a href="http://google.com">Link to Google</a> -->
+
+     <!-- <form method="get">
+        <label>Your Name:<input type = "text" name="name"></label>
+        <input type="submit">
+     </form> -->
+
+    <script>
+    //Event Basics
+    /* var btn = document.querySelector('button');
+
+    /* function ouch(){
+        alert("I told you not to press me!");
+    }
+
+    btn.onclick = ouch; */
+
+    //or we can use an anonymous function ....
+
+   /*  btn.onclick = function(){
+        alert("I told you not to press me!");
+    } //since we are running this button once, we don't need to create a named function to use over and over  */
+ 
+    //_____________________________________________________________________
+    //Using addEventListener method rather than onclick property
+    /* var btn = document.querySelector('button');
+
+    function ouch(){
+        alert("I told you not to press me!");
+    }
+
+    btn.addEventListener('click', ouch); //more modern */
+
+    //_______________________________________________________________________
+    //Use an anonymous function instead of ouch 
+    /* var btn = document.querySelector('button');
+
+    btn.addEventListener('click', function(){
+        alert("I told you not to press me!");
+    }); */ //Use an anonymous function if you are not running this alert on lots of buttons
+
+    //now let's add an event object:
+
+    /* var btn = document.querySelector('button');
+
+    btn.addEventListener('click', function(event){
+        event.target.style.backgroundColor = "red"; //sets button bkgd to red when clicked
+        alert("I told you not to press me!");
+    }); */
+
+    //_______________________________________________________________________
+    //Using preventDefault to stop browser from doing default behavior
+
+    /* var link = document.querySelector('a');
+
+    link.addEventListener('click', function(event){
+        event.preventDefault();
+
+        alert("Sorry, no Google for you!")
+    }); */
+
+
+    //_______________________________________________________________________
+    //Using event with Forms
+      /* var myForm = document.querySelector('form');
+
+      myForm.addEventListener('submit', function(e){ //e is our shortcut for event or evt
+        e.preventDefault();
+
+        var formData = document.querySelector('input').value;
+        alert(formData);
+      }); */
+
+    
+    //_______________________________________________________________________
+    //Mouseover, Mouseout Events:
+    /* 
+    var heading = document.querySelector('h1');
+    var box = document.querySelector('div');
+
+    box.addEventListener('mouseover', function(){
+        heading.innerHTML = "The mouse is over the box"; // text should now change but notice it stays
+    }); //now lets add another function so the new text goes away 
+
+    box.addEventListener('mouseout', function(){
+        heading.innerHTML = "The mouse has left the box";
+    });//now lets return the page to default text when we roll over the heading
+
+    heading.addEventListener('mouseover', function(){
+        heading.innerHTML = "Roll Your Mouse Over the Box";
+    });
+    */
+
+
+    //_______________________________________________________________________
+    //Capture Scroll Event
+    var pageTop; 
+
+    window.addEventListener('scroll', function(){
+        pageTop = window.pageYOffset;
+        console.log(pageTop);
+    });
+
+    </script>
+</body>
+</html>
