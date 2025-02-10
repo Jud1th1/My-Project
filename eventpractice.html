@@ -13,7 +13,8 @@
     </div>
     <p>Here is another paragraph of text</p>
     <p>Here is a third paragraph of text</p>
-    <button>Turn Green Dammit!</button>
+    <button>Turn Green Dammit!</button> 
+    <button>Remove Paragraph</button>
 
 <script>
 //Challenge 22. Make an HTML file with a paragraph and a button. When you click the button, make the paragraph turn green.
@@ -42,25 +43,53 @@ btn.addEventListener('click', function(){
 //__________________________________________________________________________________________________________
 //Challenge 24. Change the HTML so that there is a div around one paragraph. Make it so that when you click 
 //the button a new paragraph is added to the div, with the text, "A new paragraph" in it.
-var btn = document.querySelector('button');
-var paragraphs = document.querySelectorAll('p');
+/* var btn = document.querySelector('button');
+var div = document.getElementsByTagName('div')[0];
+
+btn.addEventListener('click', function(){
+    var newParagraph = document.createElement('p');
+    newParagraph.textContent = "Here is my new paragraph"; 
+    div.appendChild(newParagraph);
+}); */
+
+
+//__________________________________________________________________________________________________________
+//Challenge 25. Add an additional button that removes the last paragraph from the div.
+/* var div = document.getElementsByTagName('div')[0];
+var addBtn = document.querySelectorAll('button')[0]; //remember to use All when dealing w/ multiple selectors
+var delBtn = document.querySelectorAll('button')[1];
+
+addBtn.addEventListener('click', function(){
+    var newParagraph = document.createElement('p');
+    newParagraph.textContent = "Here is my new paragraph"; 
+    div.appendChild(newParagraph);
+});
+
+delBtn.addEventListener('click', function(){
+    var allPs = div.querySelectorAll('p');  // Get only paragraphs within the div
+    if (allPs.length > 0){//NOTE: all Ps is a node LIST
+        div.removeChild(allPs[allPs.length-1]);
+    }
+});
+ */
+
+
+//__________________________________________________________________________________________________________
+//Challenge 26.
 
 
 
+//__________________________________________________________________________________________________________
+//Extra practice Make an HTML file with a div that contains three paragraphs. Add a button below the div. 
+//When you click the button, remove the last paragraph from the div.
 
+/* var btnDel = document.querySelector('button');
+var para = document.querySelectorAll('p');
 
-
-
-
-
-
-
-
-
-
-
-
-
+btnDel.addEventListener('click',function(){
+    var div = document.querySelector('div');
+    div.removeChild(para[para.length-1]);
+}); */
 
 
 </script>
