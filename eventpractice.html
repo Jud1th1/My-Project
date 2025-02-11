@@ -8,13 +8,10 @@
 <body>
     
     <h1>JavaScript Event Challenges</h1>
-    <div>
-        <p>Here is a paragraph of text</p>
-    </div>
-    <p>Here is another paragraph of text</p>
-    <p>Here is a third paragraph of text</p>
-    <button>Turn Green Dammit!</button> 
-    <button>Remove Paragraph</button>
+    <form>
+        <label>Enter a number <input type="text"></label>
+        <input type="submit" value="send number">
+    </form>
 
 <script>
 //Challenge 22. Make an HTML file with a paragraph and a button. When you click the button, make the paragraph turn green.
@@ -75,7 +72,76 @@ delBtn.addEventListener('click', function(){
 
 
 //__________________________________________________________________________________________________________
-//Challenge 26.
+//Challenge 26. For this challenge, change the first paragraph so that it says, "This is paragraph number 1".
+//Each time the user presses the add paragraph button, the number at the end of the statement increments.
+//When the user clicks the remove paragraph button, it functions as normal, but alerts the user if they try 
+//to delete the last paragraph.
+
+/* var addBtn = document.querySelectorAll('button')[0];
+var delBtn = document.querySelectorAll('button')[1];
+var div = document.querySelector('div');
+var count = 1;
+
+addBtn.addEventListener('click',function(){
+    var newParagraph = document.createElement('p');
+    newParagraph.textContent = "This is paragraph" + count; 
+    div.appendChild(newParagraph);
+    count++
+});
+
+delBtn.addEventListener('click',function(){ 
+    if (div.children.length > 0){
+        div.removeChild(div.lastElementChild);
+    }else{
+        alert("No more paragraphs to remove!");
+    }
+}) */
+//_________________________
+//Professor's answer:
+/* var divTag = document.querySelector('div');
+var btnAdd = document.querySelectorAll('button')[0];
+var btnDelete = document.querySelectorAll('button')[1];
+var numOfPs = 1;
+
+btnAdd.addEventListener('click', function(){
+    numOfPs++;
+    var newP = document.createElement('p');
+    var pText = document.createTextNode(
+        `This is paragraph number ${numOfPs-1}`);
+    newP.appendChild(pText);
+    divTag.appendChild(newP);
+});
+
+btnDelete.addEventListener('click', function(){
+    if(numOfPs > 1){
+        divTag.removeChild(divTag.children[numOfPs-1]);
+        numOfPs--;
+    }
+    else{
+        alert("don't delete the last paragraph!");
+    }
+}); */
+ 
+
+//__________________________________________________________________________________________________________
+//Challenge 27. Add a form. When the user submits a number, change the size of the font for the h1 
+//to be equal to the number they submitted in pixels. If no number is entered, or something other than 
+//a number is entered, alert that the user must enter a number. To make this work you will have to 
+//prevent the default behavior for the form submission.
+
+
+var num = ;
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -89,8 +155,7 @@ var para = document.querySelectorAll('p');
 btnDel.addEventListener('click',function(){
     var div = document.querySelector('div');
     div.removeChild(para[para.length-1]);
-}); */
-
+});*/
 
 </script>
 
