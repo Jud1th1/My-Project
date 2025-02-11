@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scope in JS</title>
+</head>
+<body>
+
+    <h1>Scope in JS</h1>
+
+    <script>
+        var aVariable = "this is in the global scope"; //global scope is outside the function
+
+        function testScope(){
+            oopsGlobal = "This is accidentally global"; //no var keyword = global
+            var aVariable = "This is in the local scope"; //local scope is inside the function
+            console.log(aVariable);
+        }
+    
+    testScope();
+
+    console.log(oopsGlobal);
+    //So it logs both variables which have the same name which technically is not good
+    //If you forgot to use the var keyword when defining a variable, the variable is assigned to the global scope
+   //___________________________________________________________________________________
+   //Strategy 1: Avoid using global scope whenever possible :
+
+        /* (function (){
+                var myPs = document.querySelectorAll('p');
+                for(var i=0; i<myPs.length; i++){
+                    myPs[i].style.color = "red";
+                }
+        }());//add one more set of parentheses to, force it to run
+
+        console.log(myPs); */
+
+    //___________________________________________________________________________________
+   //Strategy 2: "use strict":
+
+        /* "use strict"; //our directive to keep us from accidentally forgetting var keyword 
+        var newVar = "not properly defined";
+
+        console.log(newVar);
+
+        //i.e
+        (function (){
+            "use strict";
+                var myPs = document.querySelectorAll('p');
+                for(var i=0; i<myPs.length; i++){
+                    myPs[i].style.color = "red";
+                }
+        }()); */
+   
+    //___________________________________________________________________________________
+    //Strategy 3: Use const and let keywords 
+    //const:
+        /* const cheese = "yummy";
+        console.log(cheese);
+        cheese = "cheese is yucky"; */
+
+    //let:   
+        for(let i = 0; i < 10; i++){
+            console.log(i);
+        }//it it log the loop of numbers but if you try to reassign as seen below:
+
+        console.log(`the value of i is ${i}`);// you will get an error b/c it is a block level scope(this would work with var however)
+
+
+   
+   
+   
+   </script>
+</body>
+</html>
