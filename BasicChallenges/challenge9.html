@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Basic Challenges: Challenge 9</title>
+</head>
+<body>
+    <h1>Javascript Basic Challenges</h1>
+    <h2>Challenge 9:</h2>
+
+    <p>Prompt the user for a color, then have the console report if the user typed a primary color (red, blue, or yellow) or a secondary color (orange, green or purple) or none of these. </p>
+    <p>Handle the situation for both uppercase and lowercase letters in the color the user types in.</p>
+    <p>//HINT: Remember the || means "or"</p>
+
+<script>
+    var primaryColor = ["red", "blue", "yellow"];
+        var secondaryColor = ["orange", "green", "purple"];
+        var userColor = prompt("Enter a color").toLowerCase();
+
+        if(primaryColor.includes(userColor)){
+            console.log("Nice Choice! You picked a primary color:");
+        }else if(secondaryColor.includes(userColor)){
+            console.log("Nice Choice! You picked a secondary color:");
+        }else{
+            console.log("Cool choice, try picking a primary or secondary color next");
+        }
+
+        //or:
+
+        if(primaryColor.includes(userColor) || secondaryColor.includes(userColor)){
+            console.log("It's a primary or secondary color.");
+        }
+</script>
+</body>
+</html>
