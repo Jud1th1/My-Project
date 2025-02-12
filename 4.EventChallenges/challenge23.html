@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Event Challenges</title>
+    <script src="script22.js" defer></script>
+</head>
+<body>
+
+    <h1>JavaScript Event Challenges: Challenge 23</h1>
+    <p>Here is a paragraph of text.</p>
+    <p>Here is another paragraph of text.</p>
+    <p>Here is a third paragraph of text.</p>
+    <button>Turn Them All Green Dammit!</button>
+
+
+<script>
+//Challenge 23. Add a few more paragraphs. When you click the button, all the paragraphs turn green.
+var btn = document.querySelector('button');
+var paragraphs = document.querySelectorAll('p');
+
+btn.addEventListener('click', function(){
+   for(var i=0; i<paragraphs.length; i++){
+    paragraphs[i].style.color = 'green'
+    };
+  }); 
+
+//or
+/* btn.addEventListener('click', function() {
+    paragraphs.forEach(function(paragraph) {
+        paragraph.style.color = 'green';
+    });
+}); */
+</script>
+</body>
+</html>

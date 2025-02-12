@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Event Challenges</title>
+    <script src="script22.js" defer></script>
+</head>
+<body>
+
+    <h1>JavaScript Event Challenges: Challenge 26</h1>
+    <div>
+        <p>This is paragraph number </p>
+    </div>
+    <button>Add a paragraph</button>
+    <button>Remove a paragraph</button>
+
+
+<script>
+//Challenge 26. For this challenge, change the first paragraph so that it says, "This is paragraph number 1".
+//Each time the user presses the add paragraph button, the number at the end of the statement increments.
+//When the user clicks the remove paragraph button, it functions as normal, but alerts the user if they try 
+//to delete the last paragraph.
+
+/* var addBtn = document.querySelectorAll('button')[0];
+var delBtn = document.querySelectorAll('button')[1];
+var div = document.querySelector('div');
+var count = 1;
+
+addBtn.addEventListener('click',function(){
+    var newParagraph = document.createElement('p');
+    newParagraph.textContent = "This is paragraph" + count; 
+    div.appendChild(newParagraph);
+    count++
+});
+
+delBtn.addEventListener('click',function(){ 
+    if (div.children.length > 0){
+        div.removeChild(div.lastElementChild);
+    }else{
+        alert("No more paragraphs to remove!");
+    }
+})  */
+//_________________________
+//Professor's answer:
+var divTag = document.querySelector('div');
+var btnAdd = document.querySelectorAll('button')[0];
+var btnDelete = document.querySelectorAll('button')[1];
+var numOfPs = 1;
+
+btnAdd.addEventListener('click', function(){
+    numOfPs++;
+    var newP = document.createElement('p');
+    var pText = document.createTextNode(
+        `This is paragraph number ${numOfPs-1}`);
+    newP.appendChild(pText);
+    divTag.appendChild(newP);
+});
+
+btnDelete.addEventListener('click', function(){
+    if(numOfPs > 1){
+        divTag.removeChild(divTag.children[numOfPs-1]);
+        numOfPs--;
+    }
+    else{
+        alert("don't delete the last paragraph!");
+    }
+}); 
+</script>
+</body>
+</html>
